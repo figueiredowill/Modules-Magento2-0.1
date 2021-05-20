@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+            <route method="POST" url="/V1/figueiredo/apirestpost/post">
+              <service class="Figueiredo\ApiRestPost\Api\ApiManagementInterface"
+                 method="postCreateProduct"/>
+                    <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+<route method="PUT" url="/V1/figueiredo/apirestpost/put/:sku">
+    <service class="Figueiredo\ApiRestPost\Api\ApiManagementInterface"
+             method="putProductBySku"/>
+                <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+<route method="DELETE" url="/V1/figueiredo/apirestpost/delete/:sku">
+    <service class="Figueiredo\ApiRestPost\Api\ApiManagementInterface"
+             method="deleteById"/>
+    <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>
